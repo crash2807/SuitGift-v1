@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
+import org.hibernate.validator.constraints.Email;
 
 
 
@@ -18,6 +19,7 @@ public class User {
     private Long idUser;
     private String name;
     private String surname;
+    @Email
     private String email;
     private String password;
     private Date birthday;

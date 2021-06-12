@@ -3,10 +3,11 @@ package com.project.app.controllers;
 import com.project.app.entities.Hobby;
 import com.project.app.repositories.HobbyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.Optional;
+
+@RestController
 @RequestMapping(path="/hobby")
 public class HobbyController {
     @Autowired
@@ -21,5 +22,10 @@ public class HobbyController {
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<Hobby> getAllHobbies(){
         return hobbyRepository.findAll();
+    }
+    @GetMapping(path= "/{id}")
+    public @ResponseBody
+    Optional<Hobby> getOneHobby(@PathVariable Long id){
+        return hobbyRepository.findById(id);
     }
 }
