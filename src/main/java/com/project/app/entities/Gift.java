@@ -12,7 +12,7 @@ import java.util.Set;
 public class Gift {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idGift;
+    private int idGift;
     private String gift;
     private BigDecimal price;
     private String size;

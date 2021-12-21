@@ -12,12 +12,12 @@ public class Relation {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idRelation;
+    private int idRelation;
     @ManyToOne
-    @JoinColumn(name = "idUser1", nullable = false)
+    @JoinColumn(name = "idUser", nullable = false)
     private User user1;
     @ManyToOne
-    @JoinColumn(name = "idUser2", nullable = false)
+    @JoinColumn(name = "idUser_2", nullable = false)
     private User user2;
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "relation")
     private Set<EventRelation> eventRelationSet;

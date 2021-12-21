@@ -12,7 +12,7 @@ import java.util.Set;
 public class Event {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idEvent;
+    private int idEvent;
     private String eventName;
     private String eventPlace;
     private Date eventDate;

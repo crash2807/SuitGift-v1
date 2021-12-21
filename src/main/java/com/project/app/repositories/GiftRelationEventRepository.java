@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GiftRelationEventRepository extends JpaRepository<GiftRelationEvent,Long> {
+public interface GiftRelationEventRepository extends JpaRepository<GiftRelationEvent,Integer> {
 }

@@ -11,7 +11,7 @@ import java.util.Set;
 public class EventRelation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idEventRelation;
+    private int idEventRelation;
     @ManyToOne
     @JoinColumn(name = "idEvent", nullable = false)
     private Event event;

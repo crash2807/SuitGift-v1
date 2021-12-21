@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.Email;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long idUser;
+    private int idUser;
     private String name;
     private String surname;
     @Email
