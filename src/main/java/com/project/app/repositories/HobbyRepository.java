@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface HobbyRepository extends JpaRepository<Hobby,Integer> {
-    public List<Hobby> findAllByOrderByHobbyNameAsc();
-    public List<Hobby> findByHobbyName(String hobbyName);
+     List<Hobby> findAllByOrderByHobbyNameAsc();
+     List<Hobby> findByHobbyName(String hobbyName);
 }

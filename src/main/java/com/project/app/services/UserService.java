@@ -8,9 +8,9 @@ import java.util.List;
 public interface UserService {
 
         User findByEmail(String email);
-        void saveUser(User user);
         List<User> findAll();
-
-
-
+        User findById(int theId);
+        void save(User theUser);
+        void deleteById(int theId);
+        List<User> searchBy(String theName, String theSurname);
 }
