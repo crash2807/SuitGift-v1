@@ -2,8 +2,8 @@ package com.project.app.services;
 
 import com.project.app.entities.User;
 import com.project.app.repositories.UserRepository;
+import io.vavr.control.Either;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,15 +45,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(int theId) {
+    public Either<Object, Optional<User>> findById(int theId) {
         Optional<User> result = userRepository.findById(theId);
-        User theUser = null;
-        if(result.isPresent()){
-            theUser = result.get();
-        }else {
-            throw new RuntimeException("Did not find user id - "+theId);
-        }
-        return theUser;
+
+        return Either.right(result);
     }
 
     @Override

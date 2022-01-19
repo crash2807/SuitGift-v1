@@ -1,5 +1,6 @@
 package com.project.app.config;
 
+import com.project.app.entities.Hobby;
 import com.project.app.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 //import org.springframework.security.core.userdetails.User;
@@ -7,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import java.util.Collection;
+import java.util.Set;
 
 public class CustomUserDetails implements UserDetails {
 
@@ -50,5 +52,9 @@ public class CustomUserDetails implements UserDetails {
     }
     public String getFullName() {
         return theUser.getName() + " " + theUser.getSurname();
+    }
+
+    public Set<Hobby> getUserHobbies(){
+        return theUser.getHobbySet();
     }
 }
